@@ -1,0 +1,50 @@
+task_name: gilon_activity
+features_save_dir: gilon_chunk40_window160_72users
+validation_cv_num: 0
+
+in_channels: 14
+num_class: 7
+
+exp_subset:
+  - EXP01  # SPEED-0 , ACTION-0
+  - EXP02  # SPEED-0 , ACTION-0
+  - EXP03  # SPEED-3 , ACTION-1
+  - EXP04  # SPEED-3.5 , ACTION-1
+  - EXP05  # SPEED-4 , ACTION-1
+  - EXP06  # SPEED-4.5 , ACTION-1
+  - EXP07  # SPEED-5 , ACTION-1
+  - EXP08  # SPEED-5.5 , ACTION-1
+  - EXP09  # SPEED-7 , ACTION-2
+  - EXP10  # SPEED-7.5 , ACTION-2
+  - EXP11  # SPEED-8 , ACTION-2
+  - EXP12  # SPEED-8 , ACTION-3
+  - EXP13  # SPEED-8 , ACTION-3
+  - EXP14  # SPEED-0 , ACTION-4
+  - EXP15  # SPEED-0 , ACTION-5
+  - EXP16  # SPEED-0 , ACTION-6
+
+optimizer:
+  lr: 0.002
+scheduler: none
+
+
+recurrenceplot:
+  dimension: 1
+  time_delay: 20
+  threshold: distance
+  percentage: 10
+
+
+callbacks:
+  monitor: val_loss 
+  check_val_every_n_epoch: 2
+  max_epochs: 200
+  save_top_k: 1
+  monitor_mode: min
+  patience: 3
+  min_delta: 0.005
+
+
+vit_params:
+  image_size: 160
+  patch_size: 16

@@ -1,0 +1,33 @@
+task_name: squid_game
+features_save_dir: num_3classsamples_per_class18000_time32_shape30
+validation_cv_num: 2
+
+in_channels: 30
+num_class: 3
+
+optimizer:
+  lr: 0.002
+
+
+recurrenceplot:
+  dimension: 1
+  time_delay: 4
+  threshold: distance
+  percentage: 10
+
+scheduler: none
+# scheduler_epochs: 5
+
+
+callbacks:
+  monitor: val_loss 
+  check_val_every_n_epoch: 3
+  max_epochs: 200
+  save_top_k: 1
+  monitor_mode: min
+  patience: 3
+  min_delta: 0.005
+
+vit_params:
+  image_size: 32
+  patch_size: 8

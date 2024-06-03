@@ -1,0 +1,15 @@
+torch==1.13.1
+torchmetrics==0.11.4
+torchvision==0.14.1
+pytorch-lightning==1.6.5
+captum==0.6.0
+neptune-client==0.16.7
+hydra-core==1.2.0
+hydra-colorlog==1.2.0
+pyts==0.12.0
+matplotlib==3.5.3
+easydict
+setuptools==59.5.0
+seaborn
+vit-pytorch==0.35.8
+mlp-mixer-pytorch==0.1.1

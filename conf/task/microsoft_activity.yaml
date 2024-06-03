@@ -1,0 +1,32 @@
+task_name: microsoft_activity
+features_save_dir: microsoft_chunk200_window200_subset10
+validation_cv_num: 0
+
+in_channels: 6
+num_class: 10
+
+optimizer:
+  lr: 0.01
+
+
+recurrenceplot:
+  dimension: 1
+  time_delay: 20
+  threshold: distance
+  percentage: 10
+
+scheduler: none
+
+callbacks:
+  monitor: val_loss 
+  check_val_every_n_epoch: 2
+  max_epochs: 200
+  save_top_k: 1
+  monitor_mode: min
+  patience: 7
+  min_delta: 0.005
+
+
+vit_params:
+  image_size: 200
+  patch_size: 20

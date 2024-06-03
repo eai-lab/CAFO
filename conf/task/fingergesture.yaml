@@ -1,0 +1,32 @@
+task_name: fingergesture
+features_save_dir: fingergesture
+validation_cv_num: 3
+
+in_channels: 10
+num_class: 10
+
+optimizer:
+  lr: 0.005
+
+
+recurrenceplot:
+  dimension: 1
+  time_delay: 20
+  threshold: distance
+  percentage: 10
+
+scheduler: none
+
+
+callbacks:
+  monitor: val_loss 
+  check_val_every_n_epoch: 3
+  max_epochs: 200
+  save_top_k: 1
+  monitor_mode: min
+  patience: 3
+  min_delta: 0.005
+
+vit_params:
+  image_size: 120
+  patch_size: 12

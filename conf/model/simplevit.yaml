@@ -1,0 +1,7 @@
+
+model_name: 'simplevit'
+
+dim: 256
+depth: 3
+heads: 3
+mlp_dim: 256

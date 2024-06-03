@@ -1,0 +1,5 @@
+# CAFO
+name: qrregularizer
+gamma: 0.5
+
+feature_wise: True # if false-> Class-wise ortho regularization

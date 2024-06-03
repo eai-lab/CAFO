@@ -1,0 +1,9 @@
+# select between gilon_activity, gilon_speed, squid_game
+task_name: SpokenArabicDigits
+# provide the model name 
+model_name: simplevit
+# provide the base_exp_num. This is the experiment which will be the reference point
+base_exp_num: 4000
+
+# save output file with the following
+out_file_name_base: ${task_name}-${model_name}-base${base_exp_num}

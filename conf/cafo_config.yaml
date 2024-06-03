@@ -1,0 +1,53 @@
+defaults:
+# select between "gilon_activity","microsoft_activity","squid_game","fingergesture"
+  - task: microsoft_activity
+# select between "shufflenet", "simplevit", "mlpmixer", "resnet9"
+  - model: mlpmixer
+  - channelattention: depthwise
+  # select between qrregularizer
+  - loss: qrregularizer
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+
+# select between "lightning_model_cls_cafo_ce", "lightning_model_cls_cafo_qr", 
+lightning_model: 'lightning_model_cls_cafo_ce'
+
+exp_num: 9998
+seed: 42
+gpu_id: 0
+
+fast_dev_run: False 
+limit_train_batches: 1.0
+limit_val_batches: 1.0
+
+dataset:
+  batch_size: 256
+  num_workers: 4
+
+image_encoding: rp # use recurrence plot encoding.
+
+
+## The below is used for feature removal.
+# Features related
+remove_feature: False # remove i-th feature. if -1, do not remove anythin
+# There are two ways to drop features, either as a input dictionary or manually
+remove_feature_file_name: none  # the name of the dictionary file should be given
+remove_feature_file_key: -1 # the key of the dictionary
+remove_feature_idx_lists:
+  - 0
+add_random_channel_idx: False
+random_channel_type: white_noise  # white_noise, gp, sine
+
+
+logger:
+  project_name: TEAMDEMA/recbamteam
+  name: "${task.task_name}_${model.model_name}_EXP${exp_num}"
+  api_key: USEYOURS
+
+
+save_output_path: outputs/${task.task_name}/EXP${exp_num}
+save_classwise_attention_path: outputs/${task.task_name}/classwise_attention/
+save_global_attention_path: outputs/${task.task_name}/global_attention/
+hydra:
+  run:
+    dir: ${save_output_path}
