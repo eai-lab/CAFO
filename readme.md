@@ -1,6 +1,6 @@
 
-
-# CAFO: Feature-Centric Explanation on Time Series Classification [![Generic badge](https://img.shields.io/badge/code-official-green.svg)](https://shields.io/)
+# CAFO [![Generic badge](https://img.shields.io/badge/code-official-green.svg)](https://shields.io/)
+[KDD 2024] CAFO: Feature-Centric Explanation on Time Series Classification
 ![Overview](./figures/overview.jpg)
 
 
