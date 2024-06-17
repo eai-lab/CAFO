@@ -4,8 +4,7 @@
 ![Overview](./figures/overview.jpg)
 
 
-This is the official implementation of the SIGKDD 2024 paper `CAFO: Feature-Centric Explanation on Time Series Classification` by **Jaeho Kim**, Seok-Ju (Adam) Hahn, Yoontae Hwang, Junghye Lee, and Seulki Lee. 
-We will be releasing the codes very soon!
+This is the official implementation of our paper ["CAFO: Feature-Centric Explanation on Time Series Classification", KDD 2024](https://arxiv.org/abs/2303.04743) by **Jaeho Kim**, Seok-Ju (Adam) Hahn, Yoontae Hwang, Junghye Lee, and Seulki Lee. 
 
 ## Introduction
 CAFO (Channel Attention and Feature Orthogonalization) is a novel framework for feature-centric explanation in multivariate time series (MTS) classification. We provide the official implementation for CAFO.
